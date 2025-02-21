@@ -1,0 +1,40 @@
+object frmCasdastrosView: TfrmCasdastrosView
+  Left = 0
+  Top = 0
+  Align = alClient
+  BorderStyle = bsNone
+  Caption = 'frmCasdastrosView'
+  ClientHeight = 608
+  ClientWidth = 1321
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 544
+    Width = 1321
+    Height = 64
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 0
+    object Button1: TButton
+      Left = 1073
+      Top = 0
+      Width = 248
+      Height = 64
+      Align = alRight
+      Caption = 'Sair'
+      TabOrder = 0
+      OnClick = Button1Click
+      ExplicitLeft = 1072
+      ExplicitTop = 1
+      ExplicitHeight = 62
+    end
+  end
+end

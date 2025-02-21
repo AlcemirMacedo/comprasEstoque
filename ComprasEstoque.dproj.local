@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025/02/21 09:26:26.000.902,=C:\Users\infortread\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/02/21 09:27:55.000.460,C:\Projects\Compras_estoque\FontsForm\UmainFomr.dfm=C:\Users\infortread\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2025/02/21 09:27:55.000.460,C:\Projects\Compras_estoque\FontsForm\UmainFomr.pas=C:\Users\infortread\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/02/21 09:35:09.000.416,C:\Projects\Compras_estoque\ComprasEstoque.dproj=C:\Users\infortread\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2025/02/21 13:20:25.891,=C:\Projects\Compras_estoque\Unit1.pas</Transaction>
+    <Transaction>2025/02/21 13:42:31.804,=C:\Projects\Compras_estoque\Unit1.pas</Transaction>
+    <Transaction>2025/02/21 13:48:03.608,C:\Projects\Compras_estoque\FontsForm\UCadastrosView.dfm=C:\Projects\Compras_estoque\Unit1.dfm</Transaction>
+    <Transaction>2025/02/21 13:48:03.608,C:\Projects\Compras_estoque\FontsForm\UCadastrosView.pas=C:\Projects\Compras_estoque\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>
