@@ -3,10 +3,10 @@ object mainForm: TmainForm
   Top = 0
   Align = alClient
   BorderIcons = []
-  BorderStyle = bsSingle
+  BorderStyle = bsNone
   Caption = 'Sistema de compras e estoque'
-  ClientHeight = 565
-  ClientWidth = 1204
+  ClientHeight = 698
+  ClientWidth = 1210
   Color = 12629172
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
@@ -15,35 +15,31 @@ object mainForm: TmainForm
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
-  OnShow = FormShow
   DesignSize = (
-    1204
-    565)
+    1210
+    698)
   PixelsPerInch = 96
   TextHeight = 16
   object containerMain: TPanel
     Left = 0
     Top = 0
-    Width = 1204
-    Height = 565
+    Width = 1210
+    Height = 698
     Margins.Right = 0
-    Align = alTop
+    Align = alClient
     BevelOuter = bvNone
     TabOrder = 2
-    ExplicitLeft = 3
-    ExplicitWidth = 1205
+    OnCanResize = containerMainCanResize
     object Panel2: TPanel
       Left = 0
       Top = 0
-      Width = 1204
+      Width = 1210
       Height = 57
       Align = alTop
       BevelOuter = bvNone
       Color = 8421440
       ParentBackground = False
       TabOrder = 0
-      ExplicitTop = 8
-      ExplicitWidth = 1205
       object Image1: TImage
         Left = 200
         Top = 0
@@ -274,6 +270,8 @@ object mainForm: TmainForm
         ParentFont = False
         TabOrder = 0
         OnClick = Panel1Click
+        ExplicitLeft = 3
+        ExplicitTop = -3
       end
     end
     object Panel10: TPanel
@@ -285,26 +283,25 @@ object mainForm: TmainForm
       Color = 8421440
       ParentBackground = False
       TabOrder = 1
-      object Label1: TLabel
+      OnClick = Panel10Click
+      object SpeedButton1: TSpeedButton
         Left = 90
         Top = 0
         Width = 151
         Height = 89
+        Cursor = crHandPoint
         Align = alClient
-        Alignment = taCenter
         Caption = 'Fornecedores'
-        Color = 8421440
+        Flat = True
         Font.Charset = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -19
         Font.Name = 'Futura Bk BT'
         Font.Style = []
-        ParentColor = False
         ParentFont = False
-        Layout = tlCenter
-        WordWrap = True
-        ExplicitWidth = 115
-        ExplicitHeight = 22
+        OnClick = SpeedButton1Click
+        ExplicitLeft = 160
+        ExplicitWidth = 81
       end
       object Panel17: TPanel
         Left = 0
@@ -995,7 +992,7 @@ object mainForm: TmainForm
             9760B757B2C0D6912CB075240B6C1DC9025B47B2C0D6912CB075240B6C1DC902
             5B47B2C0D6912CB075240B6C1DC9025B47B2C0D6912CB075240B6C1DC9025B47
             FA177518F4C31E2059A40000000049454E44AE426082}
-          ExplicitLeft = -24
+          ExplicitLeft = -6
         end
       end
     end
@@ -1240,9 +1237,9 @@ object mainForm: TmainForm
     Left = 0
     Top = 0
     Width = 0
-    Height = 565
+    Height = 698
     BevelEdges = []
-    Color = 8421440
+    Color = 3618588
     DisplayMode = svmOverlay
     Opened = False
     OpenedWidth = 200
@@ -1287,7 +1284,6 @@ object mainForm: TmainForm
       ParentFont = False
       TabOrder = 0
       OnClick = Panel5Click
-      ExplicitWidth = 200
       object Shape1: TShape
         Left = 0
         Top = 0
@@ -1301,14 +1297,14 @@ object mainForm: TmainForm
     end
     object Panel4: TPanel
       Left = 0
-      Top = 524
+      Top = 657
       Width = 0
       Height = 41
       Cursor = crHandPoint
       Align = alBottom
       BevelEdges = [beBottom]
       BevelOuter = bvNone
-      Caption = 'Sair'
+      Caption = 'Encerrar'
       Color = 4227327
       Font.Charset = ANSI_CHARSET
       Font.Color = clWhite
@@ -1319,8 +1315,6 @@ object mainForm: TmainForm
       ParentFont = False
       TabOrder = 1
       OnClick = Panel4Click
-      ExplicitTop = 101
-      ExplicitWidth = 200
     end
     object Panel6: TPanel
       Left = 0
@@ -1339,7 +1333,6 @@ object mainForm: TmainForm
       Font.Style = []
       ParentFont = False
       TabOrder = 2
-      ExplicitWidth = 200
       object Shape2: TShape
         Left = 0
         Top = 0
@@ -1368,8 +1361,6 @@ object mainForm: TmainForm
       Font.Style = []
       ParentFont = False
       TabOrder = 3
-      ExplicitTop = 101
-      ExplicitWidth = 200
       object Shape4: TShape
         Left = 0
         Top = 0
@@ -1397,8 +1388,6 @@ object mainForm: TmainForm
       Font.Style = []
       ParentFont = False
       TabOrder = 4
-      ExplicitTop = 230
-      ExplicitWidth = 200
       object Shape5: TShape
         Left = 0
         Top = 0
@@ -1427,8 +1416,6 @@ object mainForm: TmainForm
       Font.Style = []
       ParentFont = False
       TabOrder = 5
-      ExplicitTop = 101
-      ExplicitWidth = 200
       object Shape3: TShape
         Left = 0
         Top = 0

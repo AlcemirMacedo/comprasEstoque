@@ -1,0 +1,25 @@
+unit udtModule;
+
+interface
+
+uses
+  System.SysUtils, System.Classes;
+
+type
+  TdtModule = class(TDataModule)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dtModule: TdtModule;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

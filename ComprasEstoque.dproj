@@ -107,8 +107,17 @@
             <Form>mainForm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="FontsForm\UCadastrosView.pas">
-            <Form>frmCasdastrosView</Form>
+        <DCCReference Include="FontsForm\UfornecedorView.pas">
+            <Form>frmfornecedorView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="DB\udtModule.pas">
+            <Form>dtModule</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="FontsForm\UcadFornecedor.pas">
+            <Form>frmCadFornecedor</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

@@ -27,7 +27,6 @@ type
     Image1: TImage;
     Panel1: TPanel;
     Panel10: TPanel;
-    Label1: TLabel;
     Panel17: TPanel;
     Image2: TImage;
     Panel11: TPanel;
@@ -42,6 +41,7 @@ type
     Label4: TLabel;
     Panel16: TPanel;
     Image5: TImage;
+    SpeedButton1: TSpeedButton;
     procedure BitBtn8Click(Sender: TObject);
     procedure Panel1Click(Sender: TObject);
     procedure exitClick(Sender: TObject);
@@ -50,9 +50,14 @@ type
     procedure Panel3Click(Sender: TObject);
     procedure Panel5Click(Sender: TObject);
     procedure Panel4Click(Sender: TObject);
-    procedure FormShow(Sender: TObject);
+    procedure containerMainCanResize(Sender: TObject; var NewWidth,
+      NewHeight: Integer; var Resize: Boolean);
+    procedure Panel10Click(Sender: TObject);
   private
     { Private declarations }
+
+    procedure alinharBotoes;
+
   public
     { Public declarations }
   end;
@@ -64,11 +69,43 @@ implementation
 
 {$R *.dfm}
 
-uses UCadastrosView;
+uses UfornecedorView, UcadFornecedor;
+
+procedure TmainForm.alinharBotoes;
+var
+  larguraTotal: integer;
+  largurabtn: integer;
+begin
+  larguraTotal:= containerMain.Width;
+  largurabtn:= Round(larguraTotal / 4) - 30;
+
+  Panel10.Width:= largurabtn;
+  Panel11.Width:= largurabtn;
+  Panel13.Width:= largurabtn;
+  Panel15.Width:= largurabtn;
+
+  panel10.Left:= 15;
+  panel11.Left:= Panel10.Width + 30;
+  panel13.Left:= panel10.Width + 30 + panel11.Width + 20;
+  panel15.Left:= panel10.Width + 20 + panel11.Width + 20 + panel13.Width + 30;
+
+  panel10.Top:= 80;
+  panel11.Top:= 80;
+  panel13.Top:= 80;
+  panel15.Top:= 80;
+
+end;
 
 procedure TmainForm.BitBtn8Click(Sender: TObject);
 begin
 ShowMessage('Cliquei');
+end;
+
+procedure TmainForm.containerMainCanResize(Sender: TObject; var NewWidth,
+  NewHeight: Integer; var Resize: Boolean);
+begin
+alinharBotoes;
+
 end;
 
 procedure TmainForm.exitClick(Sender: TObject);
@@ -79,26 +116,12 @@ begin
   end;
 end;
 
-procedure TmainForm.FormShow(Sender: TObject);
-var
-  larguraTotal: integer;
-  largurabtn: integer;
+procedure TmainForm.Panel10Click(Sender: TObject);
 begin
-
-
-  larguraTotal:= mainForm.Width;
-  largurabtn:= Round(larguraTotal / 4) + 10;
-
-  Panel10.Width:= largurabtn;
-  Panel11.Width:= largurabtn;
-  Panel13.Width:= largurabtn;
-  Panel15.Width:= largurabtn;
-
-  panel10.Left:= 10;
-  panel11.Left:= Panel10.Width + 10;
-  panel13.Left:= panel11.Width + panel11.Width + 10;
-  panel15.Left:= panel13.Width + panel13.Width + 10;
-
+application.CreateForm(TfrmfornecedorView, frmfornecedorView);
+frmfornecedorView.Parent:=containerMain;
+frmfornecedorView.show;
+SplitView1.Opened:=false;
 end;
 
 procedure TmainForm.Panel1Click(Sender: TObject);
@@ -124,15 +147,27 @@ end;
 
 procedure TmainForm.Panel5Click(Sender: TObject);
 begin
-application.CreateForm(TfrmCasdastrosView, frmCasdastrosView);
-frmCasdastrosView.Parent:=containerMain;
-frmCasdastrosView.show;
-SplitView1.Opened:=false;
+if not(Assigned(frmfornecedorView)) then
+    begin
+      application.CreateForm(TfrmfornecedorView, frmfornecedorView);
+      frmfornecedorView.Parent:=containerMain;
+      frmfornecedorView.show;
+      SplitView1.Opened:=false;
+    end
+    else
+    begin
+      SplitView1.Opened:=false;
+    end;
+
+
 end;
 
 procedure TmainForm.SpeedButton1Click(Sender: TObject);
 begin
-     SplitView1.Opened:=true;
+application.CreateForm(TfrmfornecedorView, frmfornecedorView);
+frmfornecedorView.Parent:=containerMain;
+frmfornecedorView.show;
+SplitView1.Opened:=false
 end;
 
 procedure TmainForm.SpeedButton2Click(Sender: TObject);
