@@ -30,6 +30,7 @@ object mainForm: TmainForm
     BevelOuter = bvNone
     TabOrder = 2
     OnCanResize = containerMainCanResize
+    ExplicitLeft = 3
     object Panel2: TPanel
       Left = 0
       Top = 0
@@ -270,8 +271,6 @@ object mainForm: TmainForm
         ParentFont = False
         TabOrder = 0
         OnClick = Panel1Click
-        ExplicitLeft = 3
-        ExplicitTop = -3
       end
     end
     object Panel10: TPanel

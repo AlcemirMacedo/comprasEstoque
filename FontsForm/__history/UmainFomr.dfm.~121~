@@ -3,10 +3,10 @@ object mainForm: TmainForm
   Top = 0
   Align = alClient
   BorderIcons = []
-  BorderStyle = bsSingle
+  BorderStyle = bsNone
   Caption = 'Sistema de compras e estoque'
-  ClientHeight = 669
-  ClientWidth = 1204
+  ClientHeight = 698
+  ClientWidth = 1210
   Color = 12629172
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
@@ -16,25 +16,24 @@ object mainForm: TmainForm
   OldCreateOrder = False
   Position = poScreenCenter
   DesignSize = (
-    1204
-    669)
+    1210
+    698)
   PixelsPerInch = 96
   TextHeight = 16
   object containerMain: TPanel
     Left = 0
     Top = 0
-    Width = 1204
-    Height = 669
+    Width = 1210
+    Height = 698
     Margins.Right = 0
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 2
     OnCanResize = containerMainCanResize
-    ExplicitLeft = 3
     object Panel2: TPanel
       Left = 0
       Top = 0
-      Width = 1204
+      Width = 1210
       Height = 57
       Align = alTop
       BevelOuter = bvNone
@@ -271,6 +270,8 @@ object mainForm: TmainForm
         ParentFont = False
         TabOrder = 0
         OnClick = Panel1Click
+        ExplicitLeft = 3
+        ExplicitTop = -3
       end
     end
     object Panel10: TPanel
@@ -1236,7 +1237,7 @@ object mainForm: TmainForm
     Left = 0
     Top = 0
     Width = 0
-    Height = 669
+    Height = 698
     BevelEdges = []
     Color = 3618588
     DisplayMode = svmOverlay
@@ -1296,14 +1297,14 @@ object mainForm: TmainForm
     end
     object Panel4: TPanel
       Left = 0
-      Top = 628
+      Top = 657
       Width = 0
       Height = 41
       Cursor = crHandPoint
       Align = alBottom
       BevelEdges = [beBottom]
       BevelOuter = bvNone
-      Caption = 'Sair'
+      Caption = 'Encerrar'
       Color = 4227327
       Font.Charset = ANSI_CHARSET
       Font.Color = clWhite
