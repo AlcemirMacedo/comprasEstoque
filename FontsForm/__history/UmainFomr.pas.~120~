@@ -1,0 +1,202 @@
+unit UmainFomr;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons,
+  Vcl.WinXCtrls, Vcl.Menus, Vcl.Imaging.pngimage;
+
+type
+  TmainForm = class(TForm)
+    SplitView1: TSplitView;
+    SpeedButton2: TSpeedButton;
+    Panel5: TPanel;
+    containerMain: TPanel;
+    Shape1: TShape;
+    Panel4: TPanel;
+    Panel6: TPanel;
+    Shape2: TShape;
+    Panel7: TPanel;
+    Shape4: TShape;
+    Panel8: TPanel;
+    Shape5: TShape;
+    Panel9: TPanel;
+    Shape3: TShape;
+    Panel2: TPanel;
+    Image1: TImage;
+    Panel1: TPanel;
+    Panel10: TPanel;
+    Panel17: TPanel;
+    Image2: TImage;
+    Panel11: TPanel;
+    Label2: TLabel;
+    Panel12: TPanel;
+    Image3: TImage;
+    Panel13: TPanel;
+    Label3: TLabel;
+    Panel14: TPanel;
+    Image4: TImage;
+    Panel15: TPanel;
+    Label4: TLabel;
+    Panel16: TPanel;
+    Image5: TImage;
+    SpeedButton1: TSpeedButton;
+    procedure BitBtn8Click(Sender: TObject);
+    procedure Panel1Click(Sender: TObject);
+    procedure exitClick(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+    procedure Panel3Click(Sender: TObject);
+    procedure Panel5Click(Sender: TObject);
+    procedure Panel4Click(Sender: TObject);
+    procedure containerMainCanResize(Sender: TObject; var NewWidth,
+      NewHeight: Integer; var Resize: Boolean);
+    procedure Panel10Click(Sender: TObject);
+    procedure Label3Click(Sender: TObject);
+    procedure Label2Click(Sender: TObject);
+  private
+    { Private declarations }
+
+    procedure alinharBotoes;
+
+  public
+    { Public declarations }
+  end;
+
+var
+  mainForm: TmainForm;
+
+implementation
+
+{$R *.dfm}
+
+uses UfornecedorView, UcadFornecedor, UcadCategoria, udtModule, UprodutoView;
+
+procedure TmainForm.alinharBotoes;
+var
+  larguraTotal: integer;
+  largurabtn: integer;
+begin
+  larguraTotal:= containerMain.Width;
+  largurabtn:= Round(larguraTotal / 4) - 30;
+
+  Panel10.Width:= largurabtn;
+  Panel11.Width:= largurabtn;
+  Panel13.Width:= largurabtn;
+  Panel15.Width:= largurabtn;
+
+  panel10.Left:= 15;
+  panel11.Left:= Panel10.Width + 30;
+  panel13.Left:= panel10.Width + 30 + panel11.Width + 20;
+  panel15.Left:= panel10.Width + 20 + panel11.Width + 20 + panel13.Width + 30;
+
+  panel10.Top:= 80;
+  panel11.Top:= 80;
+  panel13.Top:= 80;
+  panel15.Top:= 80;
+
+end;
+
+procedure TmainForm.BitBtn8Click(Sender: TObject);
+begin
+ShowMessage('Cliquei');
+end;
+
+procedure TmainForm.containerMainCanResize(Sender: TObject; var NewWidth,
+  NewHeight: Integer; var Resize: Boolean);
+begin
+alinharBotoes;
+
+end;
+
+procedure TmainForm.exitClick(Sender: TObject);
+begin
+  if(application.MessageBox('Você tem certeza que deseja fechar?','Atenção!', MB_ICONQUESTION+MB_YESNO)=IDYES) then
+  begin
+    application.Terminate;
+  end;
+end;
+
+procedure TmainForm.Label2Click(Sender: TObject);
+begin
+if not Assigned(frmfornecedorView) then
+begin
+  application.CreateForm(TprodutoView, produtoView);
+  produtoView.Parent:=containerMain;
+  produtoView.show;
+  SplitView1.Opened:=false
+end;
+end;
+
+procedure TmainForm.Label3Click(Sender: TObject);
+begin
+  application.CreateForm(TcadCategoria, cadCategoria);
+  dtModule.tbcategoria.Append;
+  cadCategoria.ShowModal;
+end;
+
+procedure TmainForm.Panel10Click(Sender: TObject);
+begin
+application.CreateForm(TfrmfornecedorView, frmfornecedorView);
+frmfornecedorView.Parent:=containerMain;
+frmfornecedorView.show;
+SplitView1.Opened:=false;
+end;
+
+procedure TmainForm.Panel1Click(Sender: TObject);
+begin
+SplitView1.Opened:=true;
+end;
+
+procedure TmainForm.Panel3Click(Sender: TObject);
+begin
+  if(application.MessageBox('Você tem certeza que deseja fechar?','Atenção!', MB_ICONQUESTION+MB_YESNO)=IDYES) then
+  begin
+    application.Terminate;
+  end;
+end;
+
+procedure TmainForm.Panel4Click(Sender: TObject);
+begin
+  if(application.MessageBox('Você tem certeza que deseja fechar?','Atenção!', MB_ICONQUESTION+MB_YESNO)=IDYES) then
+  begin
+    application.Terminate;
+  end;
+end;
+
+procedure TmainForm.Panel5Click(Sender: TObject);
+begin
+if not(Assigned(frmfornecedorView)) then
+    begin
+      application.CreateForm(TfrmfornecedorView, frmfornecedorView);
+      frmfornecedorView.Parent:=containerMain;
+      frmfornecedorView.show;
+      SplitView1.Opened:=false;
+    end
+    else
+    begin
+      SplitView1.Opened:=false;
+    end;
+
+
+end;
+
+procedure TmainForm.SpeedButton1Click(Sender: TObject);
+begin
+if not Assigned(frmfornecedorView) then
+begin
+  application.CreateForm(TfrmfornecedorView, frmfornecedorView);
+  frmfornecedorView.Parent:=containerMain;
+  frmfornecedorView.show;
+  SplitView1.Opened:=false
+end;
+
+end;
+
+procedure TmainForm.SpeedButton2Click(Sender: TObject);
+begin
+  SplitView1.Opened:=false;
+end;
+
+end.

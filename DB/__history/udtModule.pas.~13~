@@ -1,0 +1,50 @@
+unit udtModule;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MySQL,
+  FireDAC.Phys.MySQLDef, FireDAC.VCLUI.Wait, FireDAC.Comp.UI, Data.DB,
+  FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
+  FireDAC.DApt, FireDAC.Comp.DataSet;
+
+type
+  TdtModule = class(TDataModule)
+    FDConnection1: TFDConnection;
+    FDGUIxWaitCursor1: TFDGUIxWaitCursor;
+    FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink;
+    tbfornecedor: TFDTable;
+    tbfornecedoridfornecedor: TFDAutoIncField;
+    tbfornecedorfk_cidadeID: TIntegerField;
+    tbfornecedorfk_cod_banco: TIntegerField;
+    tbfornecedornomefantasia: TStringField;
+    tbfornecedorrazaosocial: TStringField;
+    tbfornecedorendereco: TStringField;
+    tbfornecedorcep: TStringField;
+    tbfornecedorcnpjcpf: TStringField;
+    tbfornecedorinscestadual: TStringField;
+    tbfornecedorinscmunicipal: TStringField;
+    tbfornecedornomecontato: TStringField;
+    tbfornecedortelcontato: TStringField;
+    tbfornecedoremail: TStringField;
+    tbfornecedorsite: TStringField;
+    tbfornecedoragencia: TStringField;
+    tbfornecedornumconta: TStringField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dtModule: TdtModule;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

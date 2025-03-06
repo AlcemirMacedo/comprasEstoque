@@ -53,6 +53,8 @@ type
     procedure containerMainCanResize(Sender: TObject; var NewWidth,
       NewHeight: Integer; var Resize: Boolean);
     procedure Panel10Click(Sender: TObject);
+    procedure Label3Click(Sender: TObject);
+    procedure Label2Click(Sender: TObject);
   private
     { Private declarations }
 
@@ -69,7 +71,7 @@ implementation
 
 {$R *.dfm}
 
-uses UfornecedorView, UcadFornecedor;
+uses UfornecedorView, UcadFornecedor, UcadCategoria, udtModule, UprodutoView;
 
 procedure TmainForm.alinharBotoes;
 var
@@ -114,6 +116,24 @@ begin
   begin
     application.Terminate;
   end;
+end;
+
+procedure TmainForm.Label2Click(Sender: TObject);
+begin
+if not Assigned(frmfornecedorView) then
+begin
+  application.CreateForm(TprodutoView, produtoView);
+  produtoView.Parent:=containerMain;
+  produtoView.show;
+  SplitView1.Opened:=false;
+end;
+end;
+
+procedure TmainForm.Label3Click(Sender: TObject);
+begin
+  application.CreateForm(TcadCategoria, cadCategoria);
+  dtModule.tbcategoria.Append;
+  cadCategoria.ShowModal;
 end;
 
 procedure TmainForm.Panel10Click(Sender: TObject);
@@ -164,10 +184,14 @@ end;
 
 procedure TmainForm.SpeedButton1Click(Sender: TObject);
 begin
-application.CreateForm(TfrmfornecedorView, frmfornecedorView);
-frmfornecedorView.Parent:=containerMain;
-frmfornecedorView.show;
-SplitView1.Opened:=false
+if not Assigned(frmfornecedorView) then
+begin
+  application.CreateForm(TfrmfornecedorView, frmfornecedorView);
+  frmfornecedorView.Parent:=containerMain;
+  frmfornecedorView.show;
+  SplitView1.Opened:=false
+end;
+
 end;
 
 procedure TmainForm.SpeedButton2Click(Sender: TObject);

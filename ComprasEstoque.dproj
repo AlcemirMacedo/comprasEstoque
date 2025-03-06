@@ -120,6 +120,14 @@
             <Form>frmCadFornecedor</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="FontsForm\UcadCategoria.pas">
+            <Form>cadCategoria</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FontsForm\UprodutoView.pas">
+            <Form>produtoView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

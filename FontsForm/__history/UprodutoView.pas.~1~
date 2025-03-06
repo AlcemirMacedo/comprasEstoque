@@ -1,0 +1,35 @@
+unit UprodutoView;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls,
+  Data.DB, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TForm1 = class(TForm)
+    StaticText1: TStaticText;
+    Panel1: TPanel;
+    Button1: TButton;
+    Panel2: TPanel;
+    SpeedButton1: TSpeedButton;
+    Panel3: TPanel;
+    SpeedButton3: TSpeedButton;
+    Panel4: TPanel;
+    SpeedButton4: TSpeedButton;
+    DBGrid1: TDBGrid;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+end.

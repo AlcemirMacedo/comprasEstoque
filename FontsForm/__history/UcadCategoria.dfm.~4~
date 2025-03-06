@@ -1,0 +1,79 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'Form1'
+  ClientHeight = 232
+  ClientWidth = 493
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  StyleElements = [seFont, seClient]
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label2: TLabel
+    Left = 88
+    Top = 84
+    Width = 84
+    Height = 22
+    Caption = 'Descri'#231#227'o'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Futura Bk BT'
+    Font.Style = []
+    ParentFont = False
+  end
+  object descricaocategoria: TDBEdit
+    Left = 88
+    Top = 112
+    Width = 321
+    Height = 30
+    DataField = 'descricao_cat'
+    DataSource = DScategoria
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Futura Bk BT'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 493
+    Height = 41
+    Align = alTop
+    TabOrder = 1
+    object Label1: TLabel
+      AlignWithMargins = True
+      Left = 4
+      Top = 11
+      Width = 485
+      Height = 26
+      Margins.Top = 10
+      Align = alClient
+      Alignment = taCenter
+      Caption = 'Cadastrar Categoria'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Futura Bk BT'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ExplicitWidth = 195
+      ExplicitHeight = 22
+    end
+  end
+  object DScategoria: TDataSource
+    DataSet = dtModule.tbcategoria
+    Left = 424
+    Top = 176
+  end
+end

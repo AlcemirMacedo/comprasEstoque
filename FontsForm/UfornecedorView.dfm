@@ -24,26 +24,6 @@ object frmfornecedorView: TfrmfornecedorView
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 0
-    object SpeedButton2: TSpeedButton
-      Left = 621
-      Top = 0
-      Width = 579
-      Height = 64
-      Cursor = crHandPoint
-      Align = alClient
-      Caption = 'Novo Fornecedor'
-      Flat = True
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWhite
-      Font.Height = -19
-      Font.Name = 'Futura Bk BT'
-      Font.Style = []
-      ParentFont = False
-      ExplicitLeft = 1
-      ExplicitTop = 1
-      ExplicitWidth = 155
-      ExplicitHeight = 62
-    end
     object Button1: TButton
       Left = 1200
       Top = 0
@@ -61,6 +41,8 @@ object frmfornecedorView: TfrmfornecedorView
       Width = 201
       Height = 58
       Align = alLeft
+      BevelEdges = []
+      BevelOuter = bvNone
       Color = clRed
       Ctl3D = True
       Font.Charset = ANSI_CHARSET
@@ -74,10 +56,10 @@ object frmfornecedorView: TfrmfornecedorView
       TabOrder = 1
       object SpeedButton1: TSpeedButton
         AlignWithMargins = True
-        Left = 4
-        Top = 4
-        Width = 193
-        Height = 50
+        Left = 3
+        Top = 3
+        Width = 195
+        Height = 52
         Cursor = crHandPoint
         Align = alClient
         Caption = 'Excluir'
@@ -91,6 +73,8 @@ object frmfornecedorView: TfrmfornecedorView
         OnClick = SpeedButton1Click
         ExplicitLeft = 5
         ExplicitTop = 0
+        ExplicitWidth = 193
+        ExplicitHeight = 50
       end
     end
     object Panel3: TPanel
@@ -100,6 +84,8 @@ object frmfornecedorView: TfrmfornecedorView
       Width = 201
       Height = 58
       Align = alLeft
+      BevelEdges = []
+      BevelOuter = bvNone
       Color = 8421440
       Ctl3D = True
       Font.Charset = ANSI_CHARSET
@@ -113,10 +99,10 @@ object frmfornecedorView: TfrmfornecedorView
       TabOrder = 2
       object SpeedButton3: TSpeedButton
         AlignWithMargins = True
-        Left = 4
-        Top = 4
-        Width = 191
-        Height = 50
+        Left = 3
+        Top = 3
+        Width = 193
+        Height = 52
         Cursor = crHandPoint
         Margins.Right = 5
         Align = alClient
@@ -129,10 +115,8 @@ object frmfornecedorView: TfrmfornecedorView
         Font.Style = []
         ParentFont = False
         OnClick = SpeedButton3Click
-        ExplicitLeft = 57
-        ExplicitTop = 41
-        ExplicitWidth = 199
-        ExplicitHeight = 62
+        ExplicitLeft = 6
+        ExplicitTop = 0
       end
     end
     object Panel4: TPanel
@@ -142,6 +126,8 @@ object frmfornecedorView: TfrmfornecedorView
       Width = 201
       Height = 58
       Align = alLeft
+      BevelEdges = []
+      BevelOuter = bvNone
       Color = 4227327
       Ctl3D = True
       Font.Charset = ANSI_CHARSET
@@ -155,10 +141,10 @@ object frmfornecedorView: TfrmfornecedorView
       TabOrder = 3
       object SpeedButton4: TSpeedButton
         AlignWithMargins = True
-        Left = 4
-        Top = 4
-        Width = 193
-        Height = 50
+        Left = 3
+        Top = 3
+        Width = 195
+        Height = 52
         Cursor = crHandPoint
         Align = alClient
         Caption = 'Editar'
@@ -172,6 +158,8 @@ object frmfornecedorView: TfrmfornecedorView
         OnClick = SpeedButton4Click
         ExplicitLeft = 5
         ExplicitTop = 0
+        ExplicitWidth = 193
+        ExplicitHeight = 50
       end
     end
   end
@@ -198,6 +186,8 @@ object frmfornecedorView: TfrmfornecedorView
     Align = alBottom
     Anchors = [akLeft, akTop, akRight, akBottom]
     DataSource = DataSource1
+    Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    ReadOnly = True
     TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -207,7 +197,7 @@ object frmfornecedorView: TfrmfornecedorView
     Columns = <
       item
         Expanded = False
-        FieldName = 'codigo'
+        FieldName = 'idfornecedor'
         Title.Caption = 'ID'
         Visible = True
       end
@@ -215,36 +205,30 @@ object frmfornecedorView: TfrmfornecedorView
         Expanded = False
         FieldName = 'nomefantasia'
         Title.Caption = 'Nome Fantasia'
-        Width = 202
+        Width = 228
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'cpfcnpj'
-        Title.Caption = 'CPF / CNPJ'
+        FieldName = 'cnpjcpf'
+        Title.Caption = 'CNPJ / CPF'
+        Width = 201
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'telefone'
-        Title.Caption = 'Contato'
-        Width = 182
+        FieldName = 'email'
         Visible = True
       end
       item
         Expanded = False
-        Title.Caption = 'Atividade'
-        Width = 250
+        FieldName = 'endereco'
         Visible = True
       end>
   end
   object DataSource1: TDataSource
     DataSet = dtModule.tbfornecedor
-    Left = 184
-    Top = 24
-  end
-  object DataSource2: TDataSource
-    Left = 496
+    Left = 840
     Top = 24
   end
 end
